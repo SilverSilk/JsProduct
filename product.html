@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .item{
+            border: 1px dotted lightblue;
+            margin: 20px 0;
+            height: 400px;
+            text-align: center;
+        }
+        .item img{
+            max-height: 200px;
+        }
+    </style>
+    <script src="/products.js"></script>
+    <script>
+//        "use strict";
+        document.write("<h1>Товары в наличии</h1>");
+        var numPhone = phones.length;
+        document.write(`<h3>Всего товаров - ${numPhone} </h3>`);
+        
+        document.write(`
+                <div class='container'>
+                    <div class='row'>
+                
+            
+            `);
+        
+        for(var i=0; i<numPhone; i++){
+            document.write(`<div class='col-md-4'>`);
+                document.write(`<div class='item'>`);
+            document.write(`<h4>${phones[i].productName}</h4>`);
+            document.write(`<img src='http://world-shoping.com.ua/img/phones/${phones[i].id}.jpg'>`);
+             document.write(`<p>Цена:${phones[i].priceUAH} грн</p>`);
+            if(phones[i].countProducts>0){
+                document.write(`<div class="btn btn-success">Заказать</div>`);
+            }
+            else{
+                document.write(`<div class="btn btn-danger">Нет в наличии</div>`);
+            }
+                document.write(`</div>`);
+            document.write(`</div>`);
+        }
+        
+        document.write(`
+    </div>
+                    </div>
+                
+            
+            `);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
