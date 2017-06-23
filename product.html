@@ -15,7 +15,7 @@
             max-height: 200px;
         }
     </style>
-    <script src="/products.js"></script>
+    <script src="../mobileJS/products.js"></script>
     <script>
 //        "use strict";
         document.write("<h1>Товары в наличии</h1>");
@@ -35,6 +35,9 @@
             document.write(`<h4>${phones[i].productName}</h4>`);
             document.write(`<img src='http://world-shoping.com.ua/img/phones/${phones[i].id}.jpg'>`);
              document.write(`<p>Цена:${phones[i].priceUAH} грн</p>`);
+            document.write(`<p>Операционная система:${phones[i].operationSystem}</p>`);
+            document.write(`<p>Количество SIM:${phones[i].numSimCard}</p>`);
+            document.write(`<p>Рейтинг:${phones[i].productRate} просмотров:${phones[i].countViews}</p>`);
             if(phones[i].countProducts>0){
                 document.write(`<div class="btn btn-success">Заказать</div>`);
             }
